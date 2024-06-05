@@ -26,3 +26,16 @@ Refactor
 ## Questions
 
 - how to godoc my own package? run from package dir? or add it to goroot/gopath?
+
+## Benchmark
+
+```go
+func BenchmarkRepeat(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		Repeat("a")
+	}
+}
+```
+```sh
+go test -bench=.
+```
